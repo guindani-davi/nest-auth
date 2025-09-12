@@ -9,14 +9,11 @@ export class SupabaseAuthRepository implements AuthRepository {
   constructor(private readonly databaseService: DatabaseService) {}
 
   async register(data: RegisterDTO) {
-    const { email, password, name, last_name } = data;
+    const { email, password } = data;
 
-    await this.databaseService.from('users').insert({
-      email,
-      password,
-      name,
-      last_name,
-    });
+    await this.databaseService.from("users").insert({
+      email, password
+    })
   }
 
   async findUserByEmail(email: string) {

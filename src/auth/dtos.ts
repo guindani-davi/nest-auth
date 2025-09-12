@@ -6,14 +6,6 @@ export class RegisterDTO {
 
   @IsString()
   @IsNotEmpty()
-  name: string;
-
-  @IsString()
-  @IsNotEmpty()
-  last_name: string;
-
-  @IsString()
-  @IsNotEmpty()
   password: string;
 }
 
